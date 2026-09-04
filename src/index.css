@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------
+   Sophisticated Korean Web Fonts Declaration
+   1. LINE Seed KR: Ultra-chic, geometric premium brand typography
+   2. Paperlogy: Modern tactile geometric sans
+   3. Gmarket Sans: High-impact stylish display sans
+   (SUIT Variable & Pretendard are linked via CDN in index.html)
+   ------------------------------------------------------------- */
+@font-face {
+  font-family: 'LINESeedKR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINESeedKR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Rg.woff2') format('woff2');
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LINESeedKR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Th.woff2') format('woff2');
+  font-weight: 100 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperlogy';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    /* Sophisticated Font Stacks: Default is LINE Seed KR (Headings) + SUIT Variable (Body) */
+    --font-heading: 'LINESeedKR', 'SUIT Variable', 'SUIT', 'Pretendard Variable', Pretendard, system-ui, sans-serif;
+    --font-body: 'SUIT Variable', 'SUIT', 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+    /* Summer Sea (여름바다) Theme Palette */
+    --ocean-deep: #0369a1;
+    --ocean-primary: #0284c7;
+    --ocean-light: #38bdf8;
+    --ocean-cyan: #06b6d4;
+    --ocean-teal: #0891b2;
+    --ocean-foam: #e0f2fe;
+    --ocean-foam-light: #f0f9ff;
+    --ocean-border: #bae6fd;
+    --ocean-border-light: #e0f2fe;
+    
+    --sand-accent: #fef3c7;
+    --sand-border: #fde68a;
+    --coral-sunset: #f97316;
+    
+    --sea-ink: #0f172a;
+    --sea-ink-dark: #0c4a6e;
+    --sea-ink-muted: #475569;
+
+    --bg-main: #f0f9ff;
+    --surface: #ffffff;
+    --surface-low: #f8fafc;
+    --surface-container: #e0f2fe;
+    --on-surface: #0f172a;
+    --on-surface-variant: #475569;
+    --primary: #0284c7;
+    --primary-container: #0369a1;
+    --on-primary: #ffffff;
+    --primary-fixed: #e0f2fe;
+    --on-primary-fixed: #0c4a6e;
+  }
+
+  /* Preset Font System Overrides */
+  [data-font="suit"] {
+    --font-heading: 'SUIT Variable', 'SUIT', sans-serif;
+    --font-body: 'SUIT Variable', 'SUIT', sans-serif;
+  }
+
+  [data-font="paperlogy"] {
+    --font-heading: 'Paperlogy', 'LINESeedKR', sans-serif;
+    --font-body: 'SUIT Variable', 'SUIT', sans-serif;
+  }
+
+  [data-font="gmarket"] {
+    --font-heading: 'GmarketSans', 'LINESeedKR', sans-serif;
+    --font-body: 'SUIT Variable', 'SUIT', sans-serif;
+  }
+
+  [data-font="pretendard"] {
+    --font-heading: 'Pretendard Variable', Pretendard, sans-serif;
+    --font-body: 'Pretendard Variable', Pretendard, sans-serif;
+  }
+
+  * {
+    border-color: #bae6fd;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+    letter-spacing: -0.024em;
+    color: var(--sea-ink);
+    background-color: #f4f9fd;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  body {
+    background-color: #f4f9fd;
+    color: var(--sea-ink);
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    letter-spacing: -0.024em;
+    font-feature-settings: "cv05", "cv08", "cv11", "ss01";
+    min-height: 100vh;
+  }
+
+  /* Modern subtle ocean scrollbar */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f0f9ff;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #7dd3fc;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0284c7;
+  }
+}
+
+.font-serif,
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.028em;
+}
+
+.font-sans {
+  font-family: var(--font-body);
+  letter-spacing: -0.024em;
+}
+
+/* Summer Sea subtle wave micro-dot background pattern */
+.bg-pattern {
+  background-color: #f4f9fd;
+  background-image: radial-gradient(rgba(2, 132, 199, 0.12) 0.9px, transparent 0.9px);
+  background-size: 24px 24px;
+}
+
+/* Modern Card Elevation & Glassmorphic Utilities for Summer Sea */
+.glass-panel {
+  background-color: rgba(240, 249, 255, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(186, 230, 253, 0.85);
+}
+
+.card-elevated {
+  background-color: #ffffff;
+  border: 1px solid #e0f2fe;
+  box-shadow: 0 1px 3px rgba(2, 132, 199, 0.03), 0 6px 18px -4px rgba(2, 132, 199, 0.06);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-elevated:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 4px 6px rgba(2, 132, 199, 0.03), 0 12px 26px -6px rgba(2, 132, 199, 0.1);
+}
+
+/* Senior tactile button utility */
+.senior-btn-tap {
+  transition: transform 0.12s ease-out, box-shadow 0.15s ease-out, background-color 0.15s ease-out;
+}
+.senior-btn-tap:active {
+  transform: scale(0.98);
+}
+
+/* Print specific stylesheet for senior result printing */
+@media print {
+  header,
+  footer,
+  #mobile-bottom-nav,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 14pt !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
